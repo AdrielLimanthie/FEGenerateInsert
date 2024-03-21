@@ -17,9 +17,9 @@ export function getTimestamp(
 	/**
 	 * Assuming MySQL database, where the timestamp format is 'YYYY-MM-DD hh:mm:ss'
 	 */
-	return `${date.getFullYear()}-${
+	return `${date.getFullYear()}-${makeTwoDigit(
 		date.getMonth() + 1
-	}-${date.getDate()} ${hour}:${minute}:00`;
+	)}-${makeTwoDigit(date.getDate())} ${hour}:${minute}:00`;
 }
 
 function getHourFromConsumptionIndex(index: number, interval: number) {

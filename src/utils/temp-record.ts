@@ -1,5 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
+import * as fs from "node:fs";
+import * as path from "node:path";
 
 /**
  * Disallowed characters only includes ':' and '|' as those are the only unsafe characters
@@ -44,7 +44,7 @@ export function getTotalConsumptionFromRecord(tempPath: string, key: string) {
 	}
 
 	const content = fs.readFileSync(tempFilePath, "utf-8");
-	const consumptions = content.split("\n").map(Number);
+	const consumptions = content.split("\n").filter(Boolean).map(Number);
 	const totalConsumption = consumptions.reduce(
 		(total, consumption) => total + consumption,
 		0
