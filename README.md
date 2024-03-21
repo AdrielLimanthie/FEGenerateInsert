@@ -10,7 +10,7 @@ Run this command to install project dependencies.
 pnpm install --frozen-lockfile
 ```
 
-To generate an output file based on `src/sample-input.csc`, simply run this command.
+To generate an output file based on `src/sample-input.csv`, simply run this command.
 This will generate the SQL statements to a file `output.sql`.
 
 ```sh
